@@ -1,0 +1,7 @@
+[general]
+name=Super Cuencas
+qgisMinimumVersion=3.0
+description=Delimitación y análisis morfométrico automatizado de cuencas hidrográficas
+version=1.0
+author=Lucas Carrasco
+email=lbcararscom@gmail.com

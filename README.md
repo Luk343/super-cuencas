@@ -20,6 +20,14 @@ análisis espacial.
 
 ---
 
+## Descargas
+
+[![Descargar script](https://img.shields.io/badge/⬇️%20Descargar-super__cuencas__supremo.py-blue?style=for-the-badge)](https://github.com/Luk343/super-cuencas/raw/main/super_cuencas_supremo.py)
+
+[![Descargar complemento completo](https://img.shields.io/badge/⬇️%20Descargar-Complemento%20completo%20(.zip)-green?style=for-the-badge)](https://github.com/Luk343/super-cuencas/archive/refs/heads/main.zip)
+
+---
+
 ## Guía de Usuario — Super Cuencas
 
 ### Descripción
@@ -54,8 +62,20 @@ Además genera un perfil topográfico longitudinal (PNG) por cada cuenca.
 
 ### Instalación
 
-1. Descarga `super_cuencas_supremo.py` desde este repositorio.
-2. Cópialo en la carpeta de scripts de QGIS según tu sistema operativo:
+#### Opción A — Método rápido (recomendado)
+
+1. Descarga `super_cuencas_supremo.py` con el botón de arriba.
+2. Abre la **Caja de Herramientas de Procesos** en QGIS.
+3. En la barra superior de la Caja de Herramientas, haz clic en el ícono con el
+   **logo de Python** 🐍.
+4. Selecciona **"Agregar script a la caja de herramientas..."**
+5. Navega hasta el archivo descargado y selecciónalo.
+6. La herramienta aparecerá de inmediato bajo el grupo **Hidrología Avanzada**.
+
+#### Opción B — Instalación manual
+
+1. Descarga `super_cuencas_supremo.py`.
+2. Cópialo manualmente en la carpeta de scripts de QGIS según tu sistema operativo:
 
 | Sistema | Ruta |
 |---|---|
@@ -63,7 +83,7 @@ Además genera un perfil topográfico longitudinal (PNG) por cada cuenca.
 | macOS | `~/Library/Application Support/QGIS/QGIS3/profiles/default/processing/scripts/` |
 | Linux | `~/.local/share/QGIS/QGIS3/profiles/default/processing/scripts/` |
 
-3. En la Caja de Herramientas: botón **Python → Recargar scripts**.
+3. En la Caja de Herramientas: ícono Python 🐍 → **Recargar scripts**.
 4. La herramienta aparecerá bajo el grupo **Hidrología Avanzada**.
 
 ---
@@ -105,7 +125,7 @@ Además genera un perfil topográfico longitudinal (PNG) por cada cuenca.
 
 **La herramienta no aparece en la Caja de Herramientas**
 → Verifica que el archivo está en la carpeta correcta y recarga los scripts
-(botón Python → Recargar scripts).
+(ícono Python 🐍 → Recargar scripts).
 
 **Error: Whitebox Workflows no disponible**
 → Activa el complemento en *Complementos → Administrar complementos → Whitebox Workflows*.

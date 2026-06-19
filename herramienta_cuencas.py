@@ -4,8 +4,9 @@
 ║          análisis morfométrico de cuencas hidrográficas         ║
 ╠══════════════════════════════════════════════════════════════════╣
 ║  Escuela de Geografía — Universidad Austral de Chile            ║
-║  Autor  : Lucas Carrasco                                        ║
-║  Fecha  : Junio 2026                                            ║
+║  Diseño y testing : Lucas Carrasco                              ║
+║  Intermediario IA : Claude Sonnet 4.6 (Anthropic)               ║
+║  Fecha            : Junio 2026                                  ║
 ╠══════════════════════════════════════════════════════════════════╣
 ║  Plataforma : QGIS 3.44.11 · Caja de Herramientas               ║
 ║  Requiere   : Whitebox Workflows 2.1.0 (complemento QGIS)       ║
@@ -26,7 +27,9 @@
 
   Esta versión final (archivo: super_cuencas_supremo.py) es el
   resultado de aproximadamente 65 archivos de desarrollo en
-  trabajo colaborativo con IA. No fue fácil, pero llegamos.
+  trabajo colaborativo con IA — principalmente Claude (Anthropic,
+  modelo Claude Sonnet 4.6), con apoyo puntual de DeepSeek.
+  No fue fácil, pero llegamos.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 Desarrollado y probado en:
@@ -153,7 +156,7 @@ class SuperCuencasSupremo(QgsProcessingAlgorithm):
         return (
             "<b>Super Cuencas — Análisis morfométrico automatizado</b><br>"
             "<i>Escuela de Geografía · Universidad Austral de Chile</i><br>"
-            "<i>Autor: Lucas Carrasco · Junio 2026</i><br>"
+            "<i>Diseño y testing: Lucas Carrasco · Intermediario IA: Claude Sonnet 4.6 (Anthropic) · Junio 2026</i><br>"
             "<i>QGIS 3.44.11 · Whitebox Workflows 2.1.0</i><br><br>"
             "Delimita cuencas hidrográficas una por exutorio y calcula "
             "automáticamente los índices Kc, Rr y Dd usando Whitebox Workflows.<br><br>"

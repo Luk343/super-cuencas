@@ -139,9 +139,24 @@ la consola de QGIS con `import subprocess; subprocess.run(["pip", "install", "ma
 
 ---
 
+## Nota sobre nomenclatura
+
+El nombre oficial de la herramienta es **Super Cuencas**, tal como aparece en la
+Caja de Herramientas de QGIS (`displayName`). El archivo fuente del proyecto se
+llama `super_cuencas_supremo.py`.
+
+Para efectos de la entrega y evaluación del Práctico 6 del curso Aplicaciones SIG, 
+el script se distribuye en este repositorio bajo el nombre `herramienta_cuencas.py`,
+siguiendo el nombre de archivo solicitado en la pauta del práctico. Es exactamente
+el mismo código; solo cambia el nombre del archivo en disco, no el nombre de la 
+herramienta dentro de QGIS ni su funcionamiento.
+
+---
+
 ## Licencia
 
 Este proyecto está sujeto a los términos de la
 [GNU General Public License v3.0 (GPL-3.0)](LICENSE).
 Esto garantiza la libertad de usar, estudiar, compartir y modificar el software,
 asegurando que cualquier trabajo derivado mantenga el código abierto.
+

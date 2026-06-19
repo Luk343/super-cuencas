@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 ╔══════════════════════════════════════════════════════════════════╗
 ║         SUPER CUENCAS — Herramienta de delimitación y           ║
@@ -1116,7 +1115,14 @@ class SuperCuencasSupremo(QgsProcessingAlgorithm):
             "RASTER_BAND": 1, "COLUMN_PREFIX": "_z",
             "STATISTICS": [5, 6], "OUTPUT": "TEMPORARY_OUTPUT"
         }, context=context)["OUTPUT"]
-        elev_por_fid = {f.id(): (f["_zmax"], f["_zmin"]) for f in zonal.getFeatures()}
+        # ── BUG FIX: usar el campo DN (valor de cuenca) como clave en vez de fid.
+        # zonalstatisticsfb crea una capa temporal con fids propios que NO coinciden
+        # con los fids de la capa 'cuenca' que está en edición → los valores de
+        # elevación se asignaban al feature equivocado (bandurrrias recibía NULL).
+        elev_por_val = {
+            int(f[val_field]) if f[val_field] is not None else -1: (f["_zmax"], f["_zmin"])
+            for f in zonal.getFeatures()
+        }
 
         # Longitud del cauce más largo por cuenca (campo cuenca_id en flowpaths)
         fp_lyr = QgsVectorLayer(flowpaths_shp, "fp", "ogr")
@@ -1148,7 +1154,7 @@ class SuperCuencasSupremo(QgsProcessingAlgorithm):
             area_km2 = geom.area() / 1e6
             perim_km = geom.length() / 1000.0
             kc       = (0.28 * perim_km / math.sqrt(area_km2)) if area_km2 > 0 else None
-            hmax, hmin = elev_por_fid.get(feat.id(), (None, None))
+            hmax, hmin = elev_por_val.get(int(val) if val is not None else -1, (None, None))
             lcauce_km  = lcauce_por_sufijo.get(sufijo, 0.0)
             rr         = ((hmax - hmin) / lcauce_km
                           if (hmax is not None and hmin is not None and lcauce_km > 0)

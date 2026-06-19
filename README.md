@@ -22,7 +22,7 @@ análisis espacial.
 
 ## Descargas
 
-[![Descargar script](https://img.shields.io/badge/⬇️%20Descargar-super__cuencas__supremo.py-blue?style=for-the-badge)](https://github.com/Luk343/super-cuencas/raw/main/super_cuencas_supremo.py)
+[![Descargar script](https://img.shields.io/badge/⬇️%20Descargar-super__cuencas__supremo.py-blue?style=for-the-badge)](https://github.com/Luk343/super-cuencas/raw/main/herramienta_cuencas.py)
 
 [![Descargar complemento completo](https://img.shields.io/badge/⬇️%20Descargar-Complemento%20completo%20(.zip)-green?style=for-the-badge)](https://github.com/Luk343/super-cuencas/archive/refs/heads/main.zip)
 

@@ -70,7 +70,8 @@ Además genera un perfil topográfico longitudinal (PNG) por cada cuenca.
    **logo de Python** 🐍.
 4. Selecciona **"Agregar script a la caja de herramientas..."**
 5. Navega hasta el archivo descargado y selecciónalo.
-6. La herramienta aparecerá de inmediato bajo el grupo **Hidrología Avanzada**.
+6. La herramienta aparece de inmediato bajo el grupo **Hidrología Avanzada**
+   en la Caja de Herramientas de Procesos, sin necesidad de reiniciar QGIS.
 
 #### Opción B — Instalación manual
 
@@ -83,8 +84,8 @@ Además genera un perfil topográfico longitudinal (PNG) por cada cuenca.
 | macOS | `~/Library/Application Support/QGIS/QGIS3/profiles/default/processing/scripts/` |
 | Linux | `~/.local/share/QGIS/QGIS3/profiles/default/processing/scripts/` |
 
-3. En la Caja de Herramientas: ícono Python 🐍 → **Recargar scripts**.
-4. La herramienta aparecerá bajo el grupo **Hidrología Avanzada**.
+3. **Cierra y vuelve a abrir QGIS.** La herramienta aparecerá bajo el grupo
+   **Hidrología Avanzada** en la Caja de Herramientas de Procesos.
 
 ---
 ### Pipeline interno (9 pasos)
@@ -124,8 +125,21 @@ Además genera un perfil topográfico longitudinal (PNG) por cada cuenca.
 ### Solución de problemas frecuentes
 
 **La herramienta no aparece en la Caja de Herramientas**
-→ Verifica que el archivo está en la carpeta correcta y recarga los scripts
-(ícono Python 🐍 → Recargar scripts).
+→ Si la agregaste con la Opción A, revisa que seleccionaste el archivo correcto en
+*Agregar script a la caja de herramientas...*. Si la copiaste manualmente (Opción B),
+verifica que está en la carpeta correcta y **cierra y vuelve a abrir QGIS** — esa opción
+no se actualiza en caliente.
+
+**Modifiqué el script y QGIS sigue ejecutando la versión vieja**
+→ QGIS guarda una copia compilada en `__pycache__`, dentro de la misma carpeta de
+scripts. Borra:
+
+- el archivo `.py` que está en `processing/scripts/`
+- la carpeta `processing/scripts/__pycache__` (en Windows, por ejemplo:
+  `C:\Users\<usuario>\AppData\Roaming\QGIS\QGIS3\profiles\default\processing\scripts\__pycache__`)
+
+Luego vuelve a agregar el script nuevo con la **Opción A** o la **Opción B** y
+cierra y vuelve a abrir QGIS para que tome los cambios.
 
 **Error: Whitebox Workflows no disponible**
 → Activa el complemento en *Complementos → Administrar complementos → Whitebox Workflows*.

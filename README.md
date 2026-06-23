@@ -1,4 +1,4 @@
-# 🌊 Super Cuencas
+# Super Cuencas
 
 **Automatización hidrológica para QGIS** — Delimitación y análisis automático de cuencas hidrográficas
 
@@ -17,7 +17,7 @@
 
 > ⚠️ **Dependencia externa:** esta herramienta requiere el complemento [Whitebox Workflows for QGIS](https://plugins.qgis.org/plugins/whitebox_workflows_for_qgis/) ([sitio oficial de Whitebox](https://whiteboxgeo.com/)) para ejecutar los algoritmos de hidrología. No se utiliza ningún otro complemento externo a QGIS.
 >
-> 🧪 **Plataformas probadas:** Windows 11 y Linux (Ubuntu). Las referencias a macOS son orientativas y **no han sido verificadas** — ver [Notas sobre macOS](#notas-sobre-macos-no-probado).
+> 🧪 **Plataformas probadas:** Windows 11 y Linux (Ubuntu). QGIS en sí está disponible oficialmente para Windows, macOS y Linux (ver [descargas de QGIS](https://qgis.org/download/)), pero esta herramienta y su solución de problemas solo se han verificado en las dos primeras — ver [Notas sobre macOS](#notas-sobre-macos-no-probado).
 
 ---
 
@@ -41,7 +41,8 @@
 5. [Guía de usuario](#guía-de-usuario)
 6. [Solución de problemas](#solución-de-problemas)
 7. [Notas sobre macOS (no probado)](#notas-sobre-macos-no-probado)
-8. [Licencia](#licencia)
+8. [Recursos y documentación](#recursos-y-documentación)
+9. [Licencia](#licencia)
 
 ---
 
@@ -80,7 +81,7 @@ Desarrollado en la Escuela de Geografía de la Universidad Austral de Chile (UAC
 ### Software
 
 - Sistema operativo: **Windows 11** o **Linux (Ubuntu)** — únicas plataformas en las que se ha probado la herramienta. macOS no ha sido verificado (ver [Notas sobre macOS](#notas-sobre-macos-no-probado))
-- QGIS 3.x (probado en 3.44.11)
+- QGIS 3.x (probado en 3.44.11) — [descargar QGIS](https://qgis.org/download/) · [todas las versiones](https://qgis.org/downloads-list/)
 - [Whitebox Workflows for QGIS](https://plugins.qgis.org/plugins/whitebox_workflows_for_qgis/) instalado y activado (Complementos → Administrar e instalar complementos → Whitebox Workflows). Más información en el [sitio oficial de Whitebox](https://whiteboxgeo.com/)
 - Python con `matplotlib` disponible en el entorno de QGIS (necesario para generar perfiles)
 
@@ -309,6 +310,17 @@ pip3 install --user whitebox-workflows
 ```
 
 Se asume que los problemas comunes comparten las mismas soluciones que en Windows y Linux, ya que las rutas siguen una estructura equivalente — pero esto no ha sido confirmado en un entorno macOS real.
+
+---
+
+## Recursos y documentación
+
+| Recurso | Enlace |
+|---|---|
+| Descargar QGIS (Windows, macOS, Linux) | [qgis.org/download](https://qgis.org/download/) |
+| Listado completo de versiones de QGIS | [qgis.org/downloads-list](https://qgis.org/downloads-list/) |
+| Documentación oficial de QGIS | [qgis.org/resources/hub](https://qgis.org/resources/hub/) |
+| Documentación y manuales de Whitebox | [whiteboxgeo.com/learn](https://whiteboxgeo.com/learn.html) |
 
 ---
 

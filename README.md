@@ -3,7 +3,7 @@
 **Automatización hidrológica para QGIS** — Delimitación y análisis automático de cuencas hidrográficas
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Luk343/super-cuencas/main/assets/super_cuencas_logo.png" alt="Super Cuencas Logo" width="160">
+  <img src="https://raw.githubusercontent.com/Luk343/super-cuencas/main/assets/super_cuencas_logo.png?v=2" alt="Super Cuencas Logo" width="320">
 </div>
 
 <div align="center">
@@ -11,9 +11,13 @@
 ![Versión](https://img.shields.io/badge/versión-1.0-blue?style=flat-square)
 ![Licencia](https://img.shields.io/badge/licencia-GPL--3.0-lightgrey?style=flat-square)
 ![QGIS](https://img.shields.io/badge/QGIS-3.x-brightgreen?style=flat-square)
-![Plataforma](https://img.shields.io/badge/plataforma-Windows%20%7C%20macOS%20%7C%20Linux-informational?style=flat-square)
+![Plataforma](https://img.shields.io/badge/plataforma-Windows%2011%20%7C%20Ubuntu%20Linux-informational?style=flat-square)
 
 </div>
+
+> ⚠️ **Dependencia externa:** esta herramienta requiere el complemento [Whitebox Workflows for QGIS](https://plugins.qgis.org/plugins/whitebox_workflows_for_qgis/) ([sitio oficial de Whitebox](https://whiteboxgeo.com/)) para ejecutar los algoritmos de hidrología. No se utiliza ningún otro complemento externo a QGIS.
+>
+> 🧪 **Plataformas probadas:** Windows 11 y Linux (Ubuntu). Las referencias a macOS son orientativas y **no han sido verificadas** — ver [Notas sobre macOS](#notas-sobre-macos-no-probado).
 
 ---
 
@@ -36,7 +40,7 @@
 4. [Instalación](#instalación)
 5. [Guía de usuario](#guía-de-usuario)
 6. [Solución de problemas](#solución-de-problemas)
-7. [Compatibilidad con macOS](#compatibilidad-con-macos)
+7. [Notas sobre macOS (no probado)](#notas-sobre-macos-no-probado)
 8. [Licencia](#licencia)
 
 ---
@@ -75,8 +79,9 @@ Desarrollado en la Escuela de Geografía de la Universidad Austral de Chile (UAC
 
 ### Software
 
+- Sistema operativo: **Windows 11** o **Linux (Ubuntu)** — únicas plataformas en las que se ha probado la herramienta. macOS no ha sido verificado (ver [Notas sobre macOS](#notas-sobre-macos-no-probado))
 - QGIS 3.x (probado en 3.44.11)
-- Whitebox Workflows for QGIS instalado y activado (Complementos → Administrar e instalar complementos → Whitebox Workflows)
+- [Whitebox Workflows for QGIS](https://plugins.qgis.org/plugins/whitebox_workflows_for_qgis/) instalado y activado (Complementos → Administrar e instalar complementos → Whitebox Workflows). Más información en el [sitio oficial de Whitebox](https://whiteboxgeo.com/)
 - Python con `matplotlib` disponible en el entorno de QGIS (necesario para generar perfiles)
 
 ### Datos geoespaciales
@@ -110,7 +115,7 @@ La herramienta aparecerá de inmediato bajo el grupo *Hidrología Avanzada* sin 
 %APPDATA%\QGIS\QGIS3\profiles\default\processing\scripts\
 ```
 
-**macOS:**
+**macOS (no probado):**
 ```
 ~/Library/Application Support/QGIS/QGIS3/profiles/default/processing/scripts/
 ```
@@ -157,7 +162,7 @@ La herramienta aparecerá de inmediato bajo el grupo *Hidrología Avanzada* sin 
 
 ## Solución de problemas
 
-> 💡 Antes de reportar un problema, revisa si tu caso está cubierto aquí — cubre los errores más frecuentes de instalación, caché y backend de Whitebox.
+> 💡 Antes de reportar un problema, revisa si tu caso está cubierto aquí — cubre los errores más frecuentes de instalación, caché y backend de Whitebox. Estas soluciones fueron verificadas en Windows 11 y Ubuntu; las instrucciones para macOS son referenciales y no han sido probadas.
 
 ### La herramienta no aparece en la Caja de Herramientas
 
@@ -185,7 +190,7 @@ rmdir /s /q "%APPDATA%\QGIS\QGIS3\profiles\default\processing\scripts\__pycache_
 rm -rf ~/.local/share/QGIS/QGIS3/profiles/default/processing/scripts/__pycache__
 ```
 
-**macOS:**
+**macOS (no probado):**
 ```bash
 rm -rf ~/Library/Application\ Support/QGIS/QGIS3/profiles/default/processing/scripts/__pycache__
 ```
@@ -264,7 +269,7 @@ Ejecuta:
 rm -rf /home/AQUI_VA_TU_USUARIO/.local/share/QGIS/QGIS3/profiles/default/python/whitebox_workflows_lib
 ```
 
-**macOS (Terminal, con QGIS cerrado):**
+**macOS (Terminal, con QGIS cerrado — no probado):**
 ```bash
 rm -rf ~/Library/Application\ Support/QGIS/QGIS3/profiles/default/python/whitebox_workflows_lib
 ```
@@ -282,11 +287,11 @@ Abre QGIS normalmente. El plugin detectará que falta el backend y lo reinstalar
 
 ---
 
-## Compatibilidad con macOS
+## Notas sobre macOS (no probado)
 
-Super Cuencas es compatible con macOS 10.15 y versiones posteriores con QGIS 3.x instalado.
+> ⚠️ Super Cuencas **no ha sido probado en macOS**. Las rutas y comandos de esta sección se incluyen como referencia, ya que QGIS sigue una estructura de carpetas equivalente a la de Linux, pero no hay garantía de que el script funcione sin ajustes adicionales. Si lo prueban en macOS, una issue en el repositorio con el resultado (funcionó / no funcionó) ayudaría mucho a confirmar la compatibilidad real.
 
-### Rutas específicas en macOS
+### Rutas específicas en macOS (referenciales)
 
 | Elemento | Ruta |
 |---|---|
@@ -294,16 +299,16 @@ Super Cuencas es compatible con macOS 10.15 y versiones posteriores con QGIS 3.x
 | Caché de QGIS | `~/Library/Application Support/QGIS/QGIS3/profiles/default/processing/scripts/__pycache__` |
 | Backend de Whitebox | `~/Library/Application Support/QGIS/QGIS3/profiles/default/python/whitebox_workflows_lib` |
 
-### Requisitos adicionales
+### Requisitos adicionales (sin verificar)
 
 - Homebrew instalado (para gestionar dependencias si es necesario)
-- Whitebox se instala igual que en Linux:
+- Whitebox se instalaría igual que en Linux:
 
 ```bash
 pip3 install --user whitebox-workflows
 ```
 
-Los problemas comunes tienen las mismas soluciones que en Windows y Linux; únicamente varían las rutas de carpetas.
+Se asume que los problemas comunes comparten las mismas soluciones que en Windows y Linux, ya que las rutas siguen una estructura equivalente — pero esto no ha sido confirmado en un entorno macOS real.
 
 ---
 

@@ -4,7 +4,7 @@
 
 <div align="center">
 
-![Super Cuencas Logo](./assets/super_cuencas_logo.svg "Super Cuencas - Automatización hidrológica para QGIS")
+![Super Cuencas Logo](https://raw.githubusercontent.com/Luk343/super-cuencas/main/assets/super_cuencas_logo.png "Super Cuencas")
 
 </div>
 
@@ -14,9 +14,8 @@
 
 <div align="center">
 
-[![Descargar Script](https://img.shields.io/badge/Descargar_Script-blue?style=for-the-badge)](https://github.com/Luk343/super-cuencas/raw/main/herramienta_cuencas.py)
-
-[![Descargar Complemento Completo](https://img.shields.io/badge/Descargar_Complemento-green?style=for-the-badge)](https://github.com/Luk343/super-cuencas/archive/refs/heads/main.zip)
+[![Descargar Script](https://img.shields.io/badge/⬇️%20Descargar-Script_super_cuencas-blue?style=for-the-badge)](https://github.com/Luk343/super-cuencas/raw/main/herramienta_cuencas.py)
+[![Descargar Complemento](https://img.shields.io/badge/⬇️%20Descargar-Complemento_(.zip)-green?style=for-the-badge)](https://github.com/Luk343/super-cuencas/archive/refs/heads/main.zip)
 
 </div>
 
@@ -76,7 +75,7 @@ Desarrollado en la Escuela de Geografía de la Universidad Austral de Chile (UAC
 ### Datos geoespaciales
 
 - Un DEM en formato raster (GeoTIFF recomendado)
-  - Preferentemente con sistemas de coordenadas proyectado en metros
+  - Preferentemente con sistema de coordenadas proyectado en metros
   - Se puede utilizar CRS en grados geográficos activando la opción de reproyección
 - Una capa vectorial de puntos de exutorios (mínimo 2), con un punto por cada cuenca a delimitar
 
@@ -86,7 +85,7 @@ Desarrollado en la Escuela de Geografía de la Universidad Austral de Chile (UAC
 
 ### Opción A — Método rápido (recomendado)
 
-1. Descarga `super_cuencas_supremo.py` desde el [repositorio](https://github.com/Luk343/super-cuencas/raw/main/herramienta_cuencas.py)
+1. Descarga `herramienta_cuencas.py` desde el botón de arriba
 2. Abre la Caja de Herramientas de Procesos en QGIS
 3. Haz clic en el ícono de Python en la barra superior
 4. Selecciona "Agregar script a la caja de herramientas..."
@@ -96,8 +95,8 @@ La herramienta aparecerá de inmediato bajo el grupo *Hidrología Avanzada* sin 
 
 ### Opción B — Instalación manual
 
-1. Descarga `super_cuencas_supremo.py`
-2. Copia el archivo en la carpeta de scripts de QGIS según tu sistema operativo
+1. Descarga `herramienta_cuencas.py`
+2. Copia el archivo en la carpeta de scripts de QGIS según tu sistema operativo:
 
 **Windows:**
 ```
@@ -114,7 +113,7 @@ La herramienta aparecerá de inmediato bajo el grupo *Hidrología Avanzada* sin 
 ~/.local/share/QGIS/QGIS3/profiles/default/processing/scripts/
 ```
 
-3. Cierra y vuelve a abrir QGIS. La herramienta aparecerá en la Caja de Herramientas.
+3. Cierra y vuelve a abrir QGIS. La herramienta aparecerá en la Caja de Herramientas bajo el grupo *Hidrología Avanzada*.
 
 ---
 
@@ -126,14 +125,14 @@ La herramienta aparecerá de inmediato bajo el grupo *Hidrología Avanzada* sin 
 |---|---|---|---|
 | DEM | Raster | Modelo Digital de Elevación | Cualquier CRS; preferir proyectado |
 | Exutorios | Vectorial (puntos) | Puntos de salida de cada cuenca | Mínimo 2 puntos |
-| Campo identificador | Campo de texto | Nombre de cada cuenca en tabla de atributos | Vacío → `punto_0, punto_1...` |
+| Campo identificador | Campo de texto | Nombre de cada cuenca en la tabla de atributos | Vacío → `punto_0, punto_1...` |
 | Umbral de acumulación | Entero | Celdas mínimas para definir un cauce | 500–2000 (cuencas pequeñas); 2000–5000 (grandes) |
 | Distancia snap (m) | Decimal | Radio para mover exutorio al cauce más cercano | 50–200 m |
 | Reproyección | Enum | Capas a reproyectar al CRS de trabajo | DEM y exutorios si están en grados |
 | Método de snap | Enum | Corrección de posición de exutorios | Jenson Snap (recomendado) |
 | Modo de salida | Enum | Capas unificadas, separadas o ambas | Solo unificado por defecto |
 | Punto de detención | Enum | Hasta qué paso ejecutar | 0 = proceso completo |
-| Carpeta de salida | Carpeta | Ubicación para guardar resultados | Carpeta vacía dedicada |
+| Carpeta de salida | Carpeta | Ubicación para guardar los resultados | Carpeta vacía dedicada |
 
 ### Archivos de salida
 
@@ -142,7 +141,7 @@ La herramienta aparecerá de inmediato bajo el grupo *Hidrología Avanzada* sin 
 | `Cuencas_morfometria.shp` | Shapefile | Polígonos de cuencas con atributos: `cuenca_id`, `Area_km2`, `Perim_km`, `Kc`, `H_max_m`, `H_min_m`, `Lcauce_km`, `Rr`, `Lt_km`, `Dd` |
 | `Longest_Flowpath_todas.shp` | Shapefile | Cauce más largo de cada cuenca (unificado) |
 | `Streams_Vector.shp` | Shapefile | Red de drenaje vectorial completa |
-| `Puntos_Corregidos.shp` | Shapefile | Posición original y corregida de exutorios |
+| `Puntos_Corregidos.shp` | Shapefile | Posición original y corregida de cada exutorio |
 | `Cuencas_[ID].shp` | Shapefile | Polígono individual por cuenca (modo separado) |
 | `Longest_Flowpath_[ID].shp` | Shapefile | Cauce más largo individual (modo separado) |
 | `Perfil_topografico_[ID].png` | PNG (180 dpi) | Perfil longitudinal con Hmax, Hmin, desnivel, pendiente y Rr |
@@ -165,7 +164,7 @@ La herramienta aparecerá de inmediato bajo el grupo *Hidrología Avanzada* sin 
 
 ### QGIS ejecuta una versión antigua del script
 
-QGIS almacena una copia compilada en `__pycache__`. Elimina ambos:
+QGIS almacena una copia compilada en `__pycache__`. Elimínala según tu sistema operativo:
 
 **Windows:**
 ```cmd
@@ -182,7 +181,7 @@ rm -rf ~/.local/share/QGIS/QGIS3/profiles/default/processing/scripts/__pycache__
 rm -rf ~/Library/Application\ Support/QGIS/QGIS3/profiles/default/processing/scripts/__pycache__
 ```
 
-Después de esto, elimina el archivo `.py` de la carpeta de scripts y vuelve a agregarlo. Cierra y reabre QGIS.
+Después elimina el archivo `.py` de la carpeta de scripts, vuelve a agregarlo y reinicia QGIS.
 
 ---
 
@@ -207,7 +206,7 @@ Verifica que el DEM cubre completamente el área de las cuencas delimitadas. Si 
 
 ### Errores con Whitebox Workflows
 
-#### Error: "ModuleNotFoundError: No module named 'pip'" o "No module named 'ensurepip'"
+#### Error: `ModuleNotFoundError: No module named 'pip'` o `No module named 'ensurepip'`
 
 En Ubuntu/Debian/Pop!_OS, Whitebox requiere `pip` instalado a nivel de sistema:
 
@@ -230,11 +229,11 @@ pip3 install --user whitebox-workflows
 
 #### Whitebox deja de funcionar después de actualizar
 
-Las actualizaciones ocasionalmente dejan archivos antiguos o corruptos. Limpia completamente la instalación anterior y permite que QGIS la reinstale:
+Las actualizaciones ocasionalmente dejan archivos corruptos. Limpia completamente la instalación anterior y permite que QGIS la reinstale:
 
 **Windows (CMD, con QGIS cerrado):**
 
-Obtén tu usuario:
+Obtén tu nombre de usuario:
 ```cmd
 echo %USERNAME%
 ```
@@ -246,7 +245,7 @@ rmdir /s /q "C:\Users\AQUI_VA_TU_USUARIO\AppData\Roaming\QGIS\QGIS3\profiles\def
 
 **Linux (Terminal, con QGIS cerrado):**
 
-Obtén tu usuario:
+Obtén tu nombre de usuario:
 ```bash
 whoami
 ```
@@ -267,8 +266,6 @@ Abre QGIS normalmente. El plugin detectará que falta el backend y lo reinstalar
 
 #### Error: "Whitebox Workflows no disponible"
 
-Activa el complemento manualmente:
-
 1. Ve a Complementos → Administrar e instalar complementos
 2. Busca "Whitebox Workflows"
 3. Marca la casilla para activarlo
@@ -278,7 +275,7 @@ Activa el complemento manualmente:
 
 ## Compatibilidad con macOS
 
-Super Cuencas es compatible con macOS 10.15 y versiones posteriores, con QGIS 3.x instalado.
+Super Cuencas es compatible con macOS 10.15 y versiones posteriores con QGIS 3.x instalado.
 
 ### Rutas específicas en macOS
 
@@ -291,57 +288,26 @@ Super Cuencas es compatible con macOS 10.15 y versiones posteriores, con QGIS 3.
 ### Requisitos adicionales
 
 - Homebrew instalado (para gestionar dependencias si es necesario)
-- Whitebox se instala de la siguiente manera:
+- Whitebox se instala igual que en Linux:
 
 ```bash
 pip3 install --user whitebox-workflows
 ```
 
-Los problemas comunes (Whitebox no disponible, perfiles PNG no generan) tienen las mismas soluciones que en Windows y Linux, únicamente varían las rutas de carpetas.
+Los problemas comunes tienen las mismas soluciones que en Windows y Linux; únicamente varían las rutas de carpetas.
 
 ---
 
 ## Nota sobre nomenclatura
 
-El nombre oficial de la herramienta es **Super Cuencas**, tal como aparece en la Caja de Herramientas de QGIS. El archivo fuente del proyecto se denomina `super_cuencas_supremo.py`, pero para efectos de la entrega del Práctico 6 del curso Aplicaciones SIG, se distribuye como `herramienta_cuencas.py` según lo especificado en la pauta del curso.
-
-Es el mismo código; únicamente cambia el nombre del archivo en disco.
+El nombre oficial de la herramienta es **Super Cuencas**, tal como aparece en la Caja de Herramientas de QGIS. El archivo fuente se denomina `super_cuencas_supremo.py`, pero para efectos de la entrega del Práctico 6 del curso Aplicaciones SIG se distribuye como `herramienta_cuencas.py` según lo especificado en la pauta. Es el mismo código; únicamente cambia el nombre del archivo en disco.
 
 ---
 
 ## Licencia
 
-Este proyecto se distribuye bajo los términos de la [GNU General Public License v3.0 (GPL-3.0)](LICENSE).
-
-Garantiza las siguientes libertades:
-
-- Usar el software
-- Estudiar el código
-- Compartir el software
-- Modificar el software
-
-Con la garantía de que cualquier trabajo derivado mantendrá el código abierto.
-
----
-
-## Enlaces útiles
-
-- [Repositorio GitHub](https://github.com/Luk343/super-cuencas)
-- [Descargar script](https://github.com/Luk343/super-cuencas/raw/main/herramienta_cuencas.py)
-- [Descargar complemento completo (.zip)](https://github.com/Luk343/super-cuencas/archive/refs/heads/main.zip)
+Este proyecto se distribuye bajo los términos de la [GNU General Public License v3.0 (GPL-3.0)](LICENSE), que garantiza la libertad de usar, estudiar, compartir y modificar el software, asegurando que cualquier trabajo derivado mantenga el código abierto.
 
 ---
 
 Desarrollado en la Escuela de Geografía — Universidad Austral de Chile
-
----
-
-**Nota sobre el logo:** El archivo `super_cuencas_logo.svg` debe estar ubicado en la carpeta `assets/` en la raíz del repositorio. Si descargas este README, asegúrate de mantener esta estructura de directorios para que la imagen se muestre correctamente:
-
-```
-tu-repositorio/
-├── README.md
-├── assets/
-│   └── super_cuencas_logo.svg
-└── herramienta_cuencas.py
-```

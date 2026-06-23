@@ -3,8 +3,15 @@
 **Automatización hidrológica para QGIS** — Delimitación y análisis automático de cuencas hidrográficas
 
 <div align="center">
+  <img src="https://raw.githubusercontent.com/Luk343/super-cuencas/main/assets/super_cuencas_logo.png" alt="Super Cuencas Logo" width="160">
+</div>
 
-![Super Cuencas Logo](https://raw.githubusercontent.com/Luk343/super-cuencas/main/assets/super_cuencas_logo.png "Super Cuencas")
+<div align="center">
+
+![Versión](https://img.shields.io/badge/versión-1.0-blue?style=flat-square)
+![Licencia](https://img.shields.io/badge/licencia-GPL--3.0-lightgrey?style=flat-square)
+![QGIS](https://img.shields.io/badge/QGIS-3.x-brightgreen?style=flat-square)
+![Plataforma](https://img.shields.io/badge/plataforma-Windows%20%7C%20macOS%20%7C%20Linux-informational?style=flat-square)
 
 </div>
 
@@ -149,6 +156,8 @@ La herramienta aparecerá de inmediato bajo el grupo *Hidrología Avanzada* sin 
 ---
 
 ## Solución de problemas
+
+> 💡 Antes de reportar un problema, revisa si tu caso está cubierto aquí — cubre los errores más frecuentes de instalación, caché y backend de Whitebox.
 
 ### La herramienta no aparece en la Caja de Herramientas
 

@@ -1,5 +1,13 @@
 # Pipeline de Automatización Hidrológica para QGIS
 
+<div align="center">
+
+![Super Cuencas Logo](super_cuencas_logo.svg)
+
+**Super Cuencas** — Delimitación y análisis automático de cuencas hidrográficas
+
+</div>
+
 Este complemento automatiza un flujo de trabajo hidrológico estructurado en 9 etapas
 consecutivas dentro del entorno QGIS. Diseñado para el análisis geomorfológico y la
 planificación territorial, el sistema procesa Modelos Digitales de Elevación (MDE)
@@ -124,6 +132,8 @@ Además genera un perfil topográfico longitudinal (PNG) por cada cuenca.
 
 ### Solución de problemas frecuentes
 
+#### Problemas generales de la herramienta
+
 **La herramienta no aparece en la Caja de Herramientas**
 → Si la agregaste con la Opción A, revisa que seleccionaste el archivo correcto en
 *Agregar script a la caja de herramientas...*. Si la copiaste manualmente (Opción B),
@@ -135,21 +145,105 @@ no se actualiza en caliente.
 scripts. Borra:
 
 - el archivo `.py` que está en `processing/scripts/`
-- la carpeta `processing/scripts/__pycache__` (en Windows, por ejemplo:
-  `C:\Users\<usuario>\AppData\Roaming\QGIS\QGIS3\profiles\default\processing\scripts\__pycache__`)
+- la carpeta `processing/scripts/__pycache__` según tu SO:
+  - **Windows:** `C:\Users\<usuario>\AppData\Roaming\QGIS\QGIS3\profiles\default\processing\scripts\__pycache__`
+  - **Linux:** `~/.local/share/QGIS/QGIS3/profiles/default/processing/scripts/__pycache__`
+  - **macOS:** `~/Library/Application Support/QGIS/QGIS3/profiles/default/processing/scripts/__pycache__`
 
 Luego vuelve a agregar el script nuevo con la **Opción A** o la **Opción B** y
 cierra y vuelve a abrir QGIS para que tome los cambios.
 
-**Error: Whitebox Workflows no disponible**
-→ Activa el complemento en *Complementos → Administrar complementos → Whitebox Workflows*.
-
 **Los perfiles PNG no se generan**
-→ `matplotlib` no está disponible en tu entorno de QGIS. En Windows instálalo desde
-la consola de QGIS con `import subprocess; subprocess.run(["pip", "install", "matplotlib"])`.
+→ `matplotlib` no está disponible en tu entorno de QGIS. Instálalo desde
+la consola de QGIS (Complementos → Consola de Python):
+
+```python
+import subprocess
+subprocess.run(["pip", "install", "matplotlib"])
+```
 
 **H_max / H_min aparecen como NULL en la tabla de atributos**
 → Verifica que el DEM cubre completamente el área de las cuencas delimitadas.
+
+---
+
+#### Problemas con Whitebox Workflows
+
+**Error: "ModuleNotFoundError: No module named 'pip'" o "No module named 'ensurepip'"**
+→ En Ubuntu/Debian/Pop!_OS, Whitebox necesita pip instalado en el sistema:
+
+```bash
+sudo apt install python3-pip
+```
+
+Si `dpkg` está roto (ves "se interrumpió la ejecución de dpkg"):
+
+```bash
+sudo dpkg --configure -a
+sudo apt install python3-pip
+```
+
+Luego instala el backend de Whitebox:
+
+```bash
+pip3 install --user whitebox-workflows
+```
+
+**Whitebox deja de funcionar después de actualizar**
+→ Las actualizaciones de Whitebox a veces dejan archivos antiguos/corruptos. La solución es
+**limpiar completamente** la instalación anterior y dejar que QGIS la reinstale:
+
+**Windows (CMD, con QGIS cerrado):**
+```cmd
+rmdir /s /q "C:\Users\AQUI_VA_TU_USUARIO\AppData\Roaming\QGIS\QGIS3\profiles\default\python\whitebox_workflows_lib"
+```
+
+Para saber tu usuario:
+```cmd
+echo %USERNAME%
+```
+
+**Linux (Terminal, con QGIS cerrado):**
+```bash
+rm -rf /home/AQUI_VA_TU_USUARIO/.local/share/QGIS/QGIS3/profiles/default/python/whitebox_workflows_lib
+```
+
+Para saber tu usuario:
+```bash
+whoami
+```
+
+**macOS (Terminal, con QGIS cerrado):**
+```bash
+rm -rf ~/Library/Application\ Support/QGIS/QGIS3/profiles/default/python/whitebox_workflows_lib
+```
+
+Después de ejecutar el comando según tu SO, **abre QGIS normalmente**. El plugin detectará
+que falta el backend y lo reinstalará automáticamente. Esto resuelve ~95% de los problemas
+de Whitebox después de actualizaciones.
+
+**Error: "Whitebox Workflows no disponible"**
+→ Activa el complemento en *Complementos → Administrar complementos → Whitebox Workflows* y reinicia QGIS.
+
+---
+
+### Compatibilidad con macOS
+
+Super Cuencas funciona en **macOS 10.15+** con QGIS 3.x instalado. Las rutas de carpetas
+difieren de Windows y Linux:
+
+| Elemento | Ruta en macOS |
+|---|---|
+| Scripts de procesamiento | `~/Library/Application Support/QGIS/QGIS3/profiles/default/processing/scripts/` |
+| Caché de QGIS | `~/Library/Application Support/QGIS/QGIS3/profiles/default/processing/scripts/__pycache__` |
+| Backend de Whitebox | `~/Library/Application Support/QGIS/QGIS3/profiles/default/python/whitebox_workflows_lib` |
+
+**Requisitos adicionales en macOS:**
+- Homebrew instalado (para `python3-pip` si es necesario)
+- Whitebox se instala igual que en Linux: `pip3 install --user whitebox-workflows`
+
+La mayoría de problemas comunes (Whitebox no disponible, perfiles PNG no generan) tienen
+las mismas soluciones que en Windows/Linux, solo cambian las rutas de carpetas.
 
 ---
 

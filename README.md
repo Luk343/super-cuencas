@@ -4,7 +4,7 @@
 
 <div align="center">
 
-![Super Cuencas Logo](https://raw.githubusercontent.com/Luk343/super-cuencas/main/assets/super_cuencas_logo.svg)
+![Super Cuencas Logo](./assets/super_cuencas_logo.svg "Super Cuencas - Automatización hidrológica para QGIS")
 
 </div>
 
@@ -333,3 +333,15 @@ Con la garantía de que cualquier trabajo derivado mantendrá el código abierto
 ---
 
 Desarrollado en la Escuela de Geografía — Universidad Austral de Chile
+
+---
+
+**Nota sobre el logo:** El archivo `super_cuencas_logo.svg` debe estar ubicado en la carpeta `assets/` en la raíz del repositorio. Si descargas este README, asegúrate de mantener esta estructura de directorios para que la imagen se muestre correctamente:
+
+```
+tu-repositorio/
+├── README.md
+├── assets/
+│   └── super_cuencas_logo.svg
+└── herramienta_cuencas.py
+```

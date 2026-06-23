@@ -55,11 +55,11 @@ Desarrollado en la Escuela de Geografía de la Universidad Austral de Chile (UAC
 
 ### Compatibilidad y dependencias
 
-Super Cuencas no incluye código específico de sistema operativo: es un script de procesamiento de QGIS que utiliza la API de QGIS, GDAL y Whitebox Workflows. Por lo tanto, debería funcionar en cualquier plataforma donde corra QGIS — Windows, macOS o Linux (ver [descargas oficiales de QGIS](https://qgis.org/download/)).
+Super Cuencas depende del complemento externo [Whitebox Workflows for QGIS](https://plugins.qgis.org/plugins/whitebox_workflows_for_qgis/) ([sitio oficial de Whitebox](https://whiteboxgeo.com/)) para ejecutar los algoritmos de hidrología — es un requisito obligatorio, no opcional, y sin él la herramienta no funciona. No se utiliza ningún otro complemento externo a QGIS.
+
+El script en sí no incluye código específico de sistema operativo: usa la API de QGIS, GDAL y Whitebox Workflows. Por lo tanto, debería funcionar en cualquier plataforma donde QGIS **y** Whitebox Workflows estén disponibles — Windows, macOS o Linux (ver [descargas oficiales de QGIS](https://qgis.org/download/)).
 
 Las pruebas concretas de este desarrollo se realizaron en **QGIS 3.44.10 y 3.44.11** (rama LTR).
-
-La herramienta depende del complemento externo [Whitebox Workflows for QGIS](https://plugins.qgis.org/plugins/whitebox_workflows_for_qgis/) ([sitio oficial de Whitebox](https://whiteboxgeo.com/)) para los algoritmos de hidrología. No se utiliza ningún otro complemento externo a QGIS.
 
 ### Índices morfométricos calculados
 

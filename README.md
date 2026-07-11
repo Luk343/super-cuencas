@@ -211,6 +211,21 @@ Super Cuencas quedará disponible de forma permanente en la Caja de Herramientas
 | `flow_accum.tif` | Acumulación de flujo |
 | `streams_raster.tif` | Red de drenaje ráster (antes de vectorizar) |
 
+### Ejemplo de resultados
+
+Perfiles topográficos generados para dos cuencas distintas en una misma corrida:
+
+<div align="center">
+  <img src="assets/ejemplo_perfil_topografico_1.png" alt="Perfil topográfico de ejemplo — Cuenca Zona_parque_Condor" width="480">
+  <img src="assets/ejemplo_perfil_topografico_2.png" alt="Perfil topográfico de ejemplo — Cuenca Zona_bandurrrias" width="480">
+</div>
+
+Tabla de atributos resultante en `Cuencas_morfometria.shp`, con los índices Kc, Rr y Dd ya calculados para cada cuenca:
+
+<div align="center">
+  <img src="assets/ejemplo_tabla_atributos.png" alt="Tabla de atributos de ejemplo — Cuencas_morfometria" width="700">
+</div>
+
 ---
 
 ## Detección automática de CRS y unidades
@@ -405,6 +420,8 @@ El nombre oficial de la herramienta es **Super Cuencas**, tal como aparece en la
 ---
 
 ## Licencia
+
+Super Cuencas — Copyright (C) 2026 Lucas Carrasco
 
 Este proyecto se distribuye bajo los términos de la [GNU General Public License v3.0 (GPL-3.0)](LICENSE), que garantiza la libertad de usar, estudiar, compartir y modificar el software, asegurando que cualquier trabajo derivado mantenga el código abierto.
 

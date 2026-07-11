@@ -21,7 +21,7 @@
 
 <div align="center">
 
-[![Descargar Script](https://img.shields.io/badge/⬇️%20Descargar-Script_super_cuencas-blue?style=for-the-badge)](https://github.com/Luk343/super-cuencas/raw/main/herramienta_cuencas.py)
+[![Descargar Script](https://img.shields.io/badge/⬇️%20Descargar-Script_super_cuencas-blue?style=for-the-badge)](https://github.com/Luk343/super-cuencas/raw/main/script/herramienta_cuencas.py)
 [![Descargar Complemento](https://img.shields.io/badge/⬇️%20Descargar-Complemento_(.zip)-green?style=for-the-badge)](https://github.com/Luk343/super-cuencas/archive/refs/heads/main.zip)
 
 </div>
@@ -132,6 +132,14 @@ La herramienta aparecerá de inmediato bajo el grupo *Hidrología Avanzada* sin 
 
 3. Cierra y vuelve a abrir QGIS. La herramienta aparecerá en la Caja de Herramientas bajo el grupo *Hidrología Avanzada*.
 
+### Opción C — Instalar como complemento
+
+1. Descarga el `.zip` del repositorio completo desde el botón "Descargar Complemento" de arriba
+2. En QGIS, ve a Complementos → Administrar e instalar complementos → Instalar desde ZIP
+3. Selecciona el archivo descargado y haz clic en "Instalar complemento"
+
+Super Cuencas quedará disponible de forma permanente en la Caja de Herramientas de Procesos, bajo el proveedor *Super Cuencas*, sin depender de la carpeta de scripts. A diferencia de la Opción A/B, esta versión se actualiza y desactiva desde el administrador de complementos como cualquier otro plugin de QGIS.
+
 ---
 
 ## Guía de usuario
@@ -178,6 +186,11 @@ La herramienta aparecerá de inmediato bajo el grupo *Hidrología Avanzada* sin 
 **Si utilizaste la Opción B:**
 - Verifica que el archivo está en la carpeta correcta para tu sistema operativo
 - Cierra y vuelve a abrir QGIS — esta opción no se actualiza en tiempo real
+
+**Si utilizaste la Opción C:**
+- Ve a Complementos → Administrar e instalar complementos → Instalados, y confirma que "Super Cuencas" aparezca marcado como activo
+- Si no aparece en la lista, revisa el visor de mensajes de Python (Ver → Paneles → Consola de Python) al reiniciar QGIS — un error de importación ahí indica que falta algún archivo del complemento
+- El proveedor se llama *Super Cuencas* en la Caja de Herramientas, no "Scripts" como en las Opciones A/B
 
 ---
 
@@ -328,7 +341,7 @@ pip3 install --user whitebox-workflows
 
 ## Nota sobre nomenclatura
 
-El nombre oficial de la herramienta es **Super Cuencas**, tal como aparece en la Caja de Herramientas de QGIS. El archivo fuente se denomina `super_cuencas_supremo.py`, pero para efectos de la entrega del Práctico 6 del curso Aplicaciones SIG se distribuye como `herramienta_cuencas.py` según lo especificado en la pauta. Es el mismo código; únicamente cambia el nombre del archivo en disco.
+El nombre oficial de la herramienta es **Super Cuencas**, tal como aparece en la Caja de Herramientas de QGIS. El algoritmo vive en dos archivos idénticos en su lógica: `super_cuencas_supremo.py` (módulo interno del complemento, en la raíz del repositorio) y `script/herramienta_cuencas.py` (versión standalone, nombrada así según lo especificado en la pauta del Práctico 6 del curso Aplicaciones SIG). Es el mismo código de análisis; solo cambia el archivo que lo envuelve según si se instala como complemento o se agrega como script suelto.
 
 ---
 

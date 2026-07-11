@@ -1,1 +1,3 @@
-from .super_cuencas_supremo import SuperCuencasSupremo
+def classFactory(iface):
+    from .super_cuencas_plugin import SuperCuencasPlugin
+    return SuperCuencasPlugin(iface)

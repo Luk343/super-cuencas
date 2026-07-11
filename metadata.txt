@@ -2,6 +2,15 @@
 name=Super Cuencas
 qgisMinimumVersion=3.0
 description=Delimitación y análisis morfométrico automatizado de cuencas hidrográficas
+about=Complemento de Processing para QGIS que automatiza la delimitación de cuencas hidrográficas a partir de un DEM y puntos de exutorio, y calcula los índices morfométricos Kc, Rr y Dd. Requiere el complemento Whitebox Workflows for QGIS.
 version=1.0
 author=Lucas Carrasco
 email=lbcararscom@gmail.com
+category=Analysis
+tags=hidrología,cuencas,morfometría,dem,processing
+icon=assets/super_cuencas_logo.png
+experimental=False
+deprecated=False
+homepage=https://github.com/Luk343/super-cuencas
+repository=https://github.com/Luk343/super-cuencas
+tracker=https://github.com/Luk343/super-cuencas/issues

@@ -15,22 +15,11 @@
 ║  Archivo    : herramienta_cuencas.py (versión script)            ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  ANÉCDOTA DE ORIGEN DEL NOMBRE
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  El nombre "Super Cuencas" nació en clases cuando el profesor
-  Pablo Rodrigo Iribarren Anacona le comentaba a Hernán Saavedra
-  que había que ponerle un nombre a la herramienta para poder
-  reconocerla. En ese momento Lucas Carrasco lo dijo en voz alta
-  espontáneamente — y luego les informó a sus compañeros que
-  tenía copyright.
-
-  Esta versión final (archivo: super_cuencas_supremo.py) es el
-  resultado de aproximadamente 65 archivos de desarrollo en
-  trabajo colaborativo con IA — principalmente Claude (Anthropic,
-  modelo Claude Sonnet 4.6), con apoyo puntual de DeepSeek.
-  No fue fácil, pero llegamos.
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Esta versión final (archivo: super_cuencas_supremo.py) es el
+resultado de aproximadamente 65 archivos de desarrollo en
+trabajo colaborativo con IA — principalmente Claude (Anthropic,
+modelo Claude Sonnet 4.6), con apoyo puntual de DeepSeek.
+No fue fácil, pero llegamos.
 
 Desarrollado y probado en:
   · QGIS 3.44.11
@@ -1282,3 +1271,12 @@ class SuperCuencasSupremo(QgsProcessingAlgorithm):
             plt.savefig(png, dpi=180, bbox_inches="tight")
             plt.close()
             feedback.pushInfo(f"    ✓ Perfil guardado: {png}")
+
+# ----------------------------------------------------------------
+# Origen del nombre
+# El nombre "Super Cuencas" nació en clases, cuando el profesor
+# Pablo Rodrigo Iribarren Anacona le comentaba a Hernán Saavedra
+# que había que ponerle un nombre a la herramienta para poder
+# reconocerla. Yo lo dije en voz alta, espontáneamente, y después
+# les avisé a mis compañeros que tenía copyright.
+# ----------------------------------------------------------------

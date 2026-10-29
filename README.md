@@ -411,7 +411,7 @@ pip3 install --user whitebox-workflows
 
 ## Sobre el proyecto
 
-El nombre "Super Cuencas" nació en clases, cuando el profesor Pablo Rodrigo Iribarren Anacona comentaba que había que ponerle un nombre a la herramienta para poder reconocerla. Lucas Carrasco lo dijo en voz alta espontáneamente.
+El nombre "Super Cuencas" nació en clases, cuando el profesor Pablo Rodrigo Iribarren Anacona comentaba que había que ponerle un nombre a la herramienta para poder reconocerla. Yo lo dije en voz alta, espontáneamente.
 
 Esta versión final es resultado de trabajo colaborativo con IA — principalmente Claude (Anthropic, modelo Claude Sonnet 4.6), con apoyo puntual de DeepSeek — a lo largo de aproximadamente 65 archivos de desarrollo.
 

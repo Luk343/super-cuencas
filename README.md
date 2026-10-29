@@ -8,7 +8,7 @@
 
 <div align="center">
 
-![Versión](https://img.shields.io/badge/versión-1.0-blue?style=flat-square)
+![Versión](https://img.shields.io/badge/versión-1.0.1-blue?style=flat-square)
 ![Licencia](https://img.shields.io/badge/licencia-GPL--3.0-lightgrey?style=flat-square)
 ![QGIS](https://img.shields.io/badge/QGIS-3.44.10%20%7C%203.44.11-brightgreen?style=flat-square)
 ![Plataforma](https://img.shields.io/badge/plataforma-Windows%20%7C%20macOS%20%7C%20Linux-informational?style=flat-square)
@@ -411,7 +411,7 @@ pip3 install --user whitebox-workflows
 
 ## Sobre el proyecto
 
-El nombre "Super Cuencas" nació en clases, cuando el profesor Pablo Rodrigo Iribarren Anacona comentaba que había que ponerle un nombre a la herramienta para poder reconocerla. Lucas Carrasco lo dijo en voz alta espontáneamente — y luego avisó a sus compañeros que tenía copyright.
+El nombre "Super Cuencas" nació en clases, cuando el profesor Pablo Rodrigo Iribarren Anacona comentaba que había que ponerle un nombre a la herramienta para poder reconocerla. Lucas Carrasco lo dijo en voz alta espontáneamente.
 
 Esta versión final es resultado de trabajo colaborativo con IA — principalmente Claude (Anthropic, modelo Claude Sonnet 4.6), con apoyo puntual de DeepSeek — a lo largo de aproximadamente 65 archivos de desarrollo.
 
